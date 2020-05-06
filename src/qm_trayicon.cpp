@@ -122,9 +122,7 @@ void qm_trayIcon::on_activated(QSystemTrayIcon::ActivationReason reason) {
 
   case QSystemTrayIcon::Context: // Never happens. QSystemTrayIcon intercepts
                                  // and shows cmenu.
-  {
-    break;
-  }
+    { break; }
   default:
     break;
   }

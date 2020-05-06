@@ -851,3 +851,6 @@ uninstall:  FORCE
 
 FORCE:
 
+
+format:
+	@-clang-format -i src/*
