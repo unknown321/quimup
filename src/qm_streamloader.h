@@ -20,39 +20,32 @@
 */
 
 #include <QNetworkAccessManager>
-#include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QNetworkRequest>
 #include <QStringList>
 #include <QTextStream>
 #include <QTime>
 #include <QUrl>
 
-
-class qm_stream_loader: public QObject
-{
-	Q_OBJECT
+class qm_stream_loader : public QObject {
+  Q_OBJECT
 
 public:
-	qm_stream_loader();
-	virtual ~qm_stream_loader();
-	
+  qm_stream_loader();
+  virtual ~qm_stream_loader();
+
 public slots:
-	void download_this(QString input);
-	
+  void download_this(QString input);
+
 private slots:
-	void on_download_finished(QNetworkReply *reply);
-	void on_download_progress(qint64,qint64);
-	
+  void on_download_finished(QNetworkReply *reply);
+  void on_download_progress(qint64, qint64);
+
 private:
+  QNetworkAccessManager manager;
+  QNetworkReply *thedownload;
+  QTime download_time;
 
-	QNetworkAccessManager manager;
-	QNetworkReply *thedownload;
-	QTime download_time;
-	
 signals:
-	void streamdownload_done(QStringList);
-	
-	
+  void streamdownload_done(QStringList);
 };
-
-

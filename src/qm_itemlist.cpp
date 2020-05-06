@@ -19,22 +19,20 @@
 *  along with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-
 #include "qm_itemlist.h"
 
-qm_listitemInfo::qm_listitemInfo()
-{
-    type = -1;
-    time = -1; // MPD_SONG_NO_TIME
-    artist = "";
-    album = "";
-    title = "";
-    file = "";
-    track = "";
-    name = "";
-    year = "";
-    moddate = "";
-    genre = "";
-    sorter = "";
-    disc = "";
+qm_listitemInfo::qm_listitemInfo() {
+  type = -1;
+  time = -1; // MPD_SONG_NO_TIME
+  artist = "";
+  album = "";
+  title = "";
+  file = "";
+  track = "";
+  name = "";
+  year = "";
+  moddate = "";
+  genre = "";
+  sorter = "";
+  disc = "";
 }

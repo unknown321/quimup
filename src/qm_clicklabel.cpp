@@ -22,36 +22,24 @@
 #include "qm_clicklabel.h"
 #include <qevent.h>
 
-clickLabel::clickLabel (QWidget *parent)
-{
-    setParent(parent);
+clickLabel::clickLabel(QWidget *parent) { setParent(parent); }
+
+clickLabel::~clickLabel() {}
+
+void clickLabel::mouseReleaseEvent(QMouseEvent *e) {
+  if (e->button() == Qt::LeftButton) {
+    emit clicked();
+    emit clicked(e);
+  }
 }
 
-clickLabel::~clickLabel()
-{}
-
-
-void clickLabel::mouseReleaseEvent (QMouseEvent *e)
-{
-    if(e->button() == Qt::LeftButton )
-    {
-        emit clicked();
-        emit clicked(e);
-    }
+void clickLabel::wheelEvent(QWheelEvent *e) {
+  const int numSteps = (e->delta() / 8) / 15;
+  emit scrolled(numSteps);
 }
 
-
-void clickLabel::wheelEvent ( QWheelEvent * e)
-{
-    const int numSteps = (e->delta() / 8) / 15;
-    emit scrolled(numSteps);
-}
-
-
-void clickLabel::keyReleaseEvent (QKeyEvent *e)
-{
-    if(e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter)
-    {
-        emit clicked();
-    }
+void clickLabel::keyReleaseEvent(QKeyEvent *e) {
+  if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter) {
+    emit clicked();
+  }
 }

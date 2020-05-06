@@ -24,21 +24,20 @@
 #ifndef QM_CORE_H
 #define QM_CORE_H
 
-#include <QMainWindow>
 #include "qm_player.h"
+#include <QMainWindow>
 
-class qm_core : public QMainWindow
-{
-	Q_OBJECT
+class qm_core : public QMainWindow {
+  Q_OBJECT
 public:
-	qm_core();
-	virtual ~qm_core();
-	
-	qm_player *player;	
-	
+  qm_core();
+  virtual ~qm_core();
+
+  qm_player *player;
+
 public slots:
-    void on_message_from_2nd_instance(const QString&);
-    void on_system_quit();
+  void on_message_from_2nd_instance(const QString &);
+  void on_system_quit();
 };
 
 #endif // QM_CORE_H

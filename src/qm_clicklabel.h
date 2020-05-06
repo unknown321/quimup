@@ -22,26 +22,25 @@
 #ifndef QM_CLICKLABEL
 #define QM_CLICKLABEL
 
-#include <qlabel.h>
 #include <qevent.h>
+#include <qlabel.h>
 
-class clickLabel : public QLabel
-{
-	Q_OBJECT
+class clickLabel : public QLabel {
+  Q_OBJECT
 
 public:
-    clickLabel( QWidget * parent = nullptr);
-	virtual ~clickLabel();
-	
+  clickLabel(QWidget *parent = nullptr);
+  virtual ~clickLabel();
+
 signals:
-	void clicked();
-	void clicked(QMouseEvent *e);
-	void scrolled(int);
-	
+  void clicked();
+  void clicked(QMouseEvent *e);
+  void scrolled(int);
+
 protected:
-	void mouseReleaseEvent ( QMouseEvent *e );
-	void keyReleaseEvent ( QKeyEvent *e );
-	void wheelEvent ( QWheelEvent * e);
+  void mouseReleaseEvent(QMouseEvent *e);
+  void keyReleaseEvent(QKeyEvent *e);
+  void wheelEvent(QWheelEvent *e);
 };
 
 #endif // QM_CLICKLABEL

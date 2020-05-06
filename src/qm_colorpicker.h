@@ -22,51 +22,46 @@
 #ifndef QM_COLOR_PICKER
 #define QM_COLOR_PICKER
 
-#include <QMainWindow>
 #include <QColor>
-#include <QLabel>
 #include <QGridLayout>
-#include <QSlider>
-#include <QPushButton>
-#include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QLabel>
+#include <QMainWindow>
+#include <QPushButton>
+#include <QSlider>
+#include <QVBoxLayout>
 #include <stdio.h> // printf
 
-
-class qm_colorpicker : public QMainWindow
-{
-	Q_OBJECT
+class qm_colorpicker : public QMainWindow {
+  Q_OBJECT
 
 public:
-    qm_colorpicker(QWidget *parent = nullptr);
-	~qm_colorpicker();
-	
+  qm_colorpicker(QWidget *parent = nullptr);
+  ~qm_colorpicker();
+
 public slots:
-	void set_colors(QColor, QColor);
-	
+  void set_colors(QColor, QColor);
+
 private slots:
-	void set_custom_fg();
-	void set_custom_bg();
-	void on_cancel();
-	void on_ok();
-	
+  void set_custom_fg();
+  void set_custom_bg();
+  void on_cancel();
+  void on_ok();
+
 private:
-	QSlider *sl_H_front;
-	QSlider *sl_S_front;
-	QSlider *sl_V_front;
-	
-	QSlider *sl_H_back;
-	QSlider *sl_S_back;
-	QSlider *sl_V_back;
-	
-	QLabel *lb_cust_color;
-	QColor  bgcolor,
-	fgcolor;
-	QPushButton
-	*bt_cancel,
-	*bt_ok;
+  QSlider *sl_H_front;
+  QSlider *sl_S_front;
+  QSlider *sl_V_front;
+
+  QSlider *sl_H_back;
+  QSlider *sl_S_back;
+  QSlider *sl_V_back;
+
+  QLabel *lb_cust_color;
+  QColor bgcolor, fgcolor;
+  QPushButton *bt_cancel, *bt_ok;
 signals:
-	void sgnl_newcolors(QColor, QColor);
+  void sgnl_newcolors(QColor, QColor);
 };
 
 #endif // QM_COLOR_PICKER

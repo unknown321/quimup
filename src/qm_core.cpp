@@ -19,12 +19,12 @@
 *  along with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-
 /*
-	***************************************************************************
-	The only purpose of the 'core' is to provide KDE with a main program window
+        ***************************************************************************
+        The only purpose of the 'core' is to provide KDE with a main program
+   window
     (albeit invisible) that can be closed on shutdown (or logout).
-	
+
     The player window ignores the close-event to allow close-to-tray behavior.
 
     But it will also ignore the close-event evoked by KDE on shutdown, which
@@ -33,39 +33,29 @@
     This 'core' however accepts the close-event, and it's child, the player
     window, is closed with it.
 
-	The player can close itself by calling qApp->quit().
-	***************************************************************************
+        The player can close itself by calling qApp->quit().
+        ***************************************************************************
 */
 
 #include "qm_core.h"
 
-qm_core::qm_core ()
-{
-    if (objectName().isEmpty())
-        setObjectName("qm_core");
+qm_core::qm_core() {
+  if (objectName().isEmpty())
+    setObjectName("qm_core");
 
-    player = new qm_player();
+  player = new qm_player();
 }
 
 // called from main.cpp
-void qm_core::on_message_from_2nd_instance(const QString & msg)
-{
-    if ( msg.startsWith("file://") || msg.startsWith("-play:file:"))
-    {
-        player->wakeup_call(true);
-        player->browser_window->plist_view->on_open_with_request(msg);
-    }
-    else
-        player->wakeup_call(false);
+void qm_core::on_message_from_2nd_instance(const QString &msg) {
+  if (msg.startsWith("file://") || msg.startsWith("-play:file:")) {
+    player->wakeup_call(true);
+    player->browser_window->plist_view->on_open_with_request(msg);
+  } else
+    player->wakeup_call(false);
 }
 
 // called from main.cpp
-void qm_core::on_system_quit()
-{
-    player->on_shudown();
-}
+void qm_core::on_system_quit() { player->on_shudown(); }
 
-qm_core::~qm_core()
-{
-	player->on_shudown();
-}
+qm_core::~qm_core() { player->on_shudown(); }

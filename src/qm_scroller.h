@@ -22,69 +22,53 @@
 #ifndef QM_SCROLLER_H
 #define QM_SCROLLER_H
 
-#include <QLabel>
-#include <QFont>
 #include <QColor>
-#include <QTimer>
+#include <QEvent>
+#include <QFont>
 #include <QImage>
+#include <QLabel>
 #include <QPixmap>
 #include <QString>
-#include <QEvent>
+#include <QTimer>
 
-class qm_Scroller : public QLabel
-{
-	Q_OBJECT
-	
+class qm_Scroller : public QLabel {
+  Q_OBJECT
+
 public:
-	//  functions
-    qm_Scroller(QWidget *parent = nullptr);
-	virtual ~qm_Scroller();
-	
-	void set_title( QString artist, QString title = "" );
-	void set_fast(bool);
-	void set_delay( int );
-	void setPalette(QPalette);
-	void setGeometry(QRect);
-	void pause(bool);
-	void setFont(const QFont & );
-	
-protected:
+  //  functions
+  qm_Scroller(QWidget *parent = nullptr);
+  virtual ~qm_Scroller();
 
+  void set_title(QString artist, QString title = "");
+  void set_fast(bool);
+  void set_delay(int);
+  void setPalette(QPalette);
+  void setGeometry(QRect);
+  void pause(bool);
+  void setFont(const QFont &);
+
+protected:
 private slots:
-	void scrollerstep();
-	
+  void scrollerstep();
+
 private:
-	//  functions
-	void start_scroll();
-	void render();
-	void enterEvent ( QEvent * event );
-	void leaveEvent ( QEvent * event );
-	
-	//  variables
-	QString new_string;
-	QColor  fg_color,
-	        bg_color;
-	QFont   the_font;
-	QLabel *virtual_label;
-	bool
-		b_pause,
-		b_scrolling,
-		b_busy,
-		b_fast;
-	int
-		scrollpos,
-		scrollstep,
-		steptime,
-		W_display,
-		W_text,
-		H_display,
-		cR, cG, cB;
-	
-	QImage
-		QImg_fulltext,
-		QImg_display;
-	
-	QTimer *steploop;
+  //  functions
+  void start_scroll();
+  void render();
+  void enterEvent(QEvent *event);
+  void leaveEvent(QEvent *event);
+
+  //  variables
+  QString new_string;
+  QColor fg_color, bg_color;
+  QFont the_font;
+  QLabel *virtual_label;
+  bool b_pause, b_scrolling, b_busy, b_fast;
+  int scrollpos, scrollstep, steptime, W_display, W_text, H_display, cR, cG, cB;
+
+  QImage QImg_fulltext, QImg_display;
+
+  QTimer *steploop;
 };
 
 #endif //  QM_SCROLLER_H

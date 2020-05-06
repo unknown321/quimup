@@ -22,67 +22,47 @@
 #ifndef QM_TRAYICON_H
 #define QM_TRAYICON_H
 
-#include <QSystemTrayIcon>
-#include <QMenu>
-#include <QMainWindow>
-#include <QObject>
-#include "qm_widget_ids.h"
 #include "qm_mpdcom.h"
+#include "qm_widget_ids.h"
+#include <QMainWindow>
+#include <QMenu>
+#include <QObject>
+#include <QSystemTrayIcon>
 
-class qm_trayIcon : public QSystemTrayIcon
-{
-	Q_OBJECT
+class qm_trayIcon : public QSystemTrayIcon {
+  Q_OBJECT
 
 public:
-    qm_trayIcon(QMainWindow*);
-	void set_tip(QString);
-	void set_mode(int);
-	void set_connected(qm_mpdCom*, bool);
-    virtual ~qm_trayIcon(); // override;
+  qm_trayIcon(QMainWindow *);
+  void set_tip(QString);
+  void set_mode(int);
+  void set_connected(qm_mpdCom *, bool);
+  virtual ~qm_trayIcon(); // override;
 
 public slots:
 
-
 signals:
-	void clicked();
-	void signal_tray_menu(int);
+  void clicked();
+  void signal_tray_menu(int);
 
 protected:
-
 private:
-    bool b_mpd_connected;
-    qm_mpdCom *mpdCom;
-	
-	QAction
-	*a_previous,
-	*a_playpause,
-	*a_stop,
-	*a_next,
-    *a_showhide,
-	*a_quit;
-	
-    QColor m_prevColor;
-	
-	QPixmap
-	pxb_st_noconn,
-	pxb_st_paused,
-    pxb_st_playing,
-	pxb_st_stopped,
-	pxb_st_idle,
-	pxb_prev,
-	pxb_stop,
-	pxb_play,
-	pxb_pause,
-	pxb_next,
-    pxb_exit;
+  bool b_mpd_connected;
+  qm_mpdCom *mpdCom;
+
+  QAction *a_previous, *a_playpause, *a_stop, *a_next, *a_showhide, *a_quit;
+
+  QColor m_prevColor;
+
+  QPixmap pxb_st_noconn, pxb_st_paused, pxb_st_playing, pxb_st_stopped,
+      pxb_st_idle, pxb_prev, pxb_stop, pxb_play, pxb_pause, pxb_next, pxb_exit;
 
 private slots:
-    void on_activated(QSystemTrayIcon::ActivationReason);
-	void on_prev_action();
-	void on_stop_action();
-	void on_play_action();
-	void on_next_action();
-	void on_quit_action();
-
+  void on_activated(QSystemTrayIcon::ActivationReason);
+  void on_prev_action();
+  void on_stop_action();
+  void on_play_action();
+  void on_next_action();
+  void on_quit_action();
 };
 #endif // QM_TRAYICON_H

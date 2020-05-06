@@ -22,38 +22,24 @@
 #include "qm_clickprogressbar.h"
 #include <qevent.h>
 
-qm_clickprogressbar::qm_clickprogressbar (QWidget *parent)
-{
-    setParent(parent);
+qm_clickprogressbar::qm_clickprogressbar(QWidget *parent) { setParent(parent); }
+
+void qm_clickprogressbar::mouseReleaseEvent(QMouseEvent *e) {
+  if (e->button() == Qt::LeftButton) {
+    emit clicked();
+    emit clicked(e);
+  }
 }
 
-void qm_clickprogressbar::mouseReleaseEvent (QMouseEvent *e)
-{
-    if(e->button() == Qt::LeftButton)
-    {
-        emit clicked();
-        emit clicked(e);
-    }
+void qm_clickprogressbar::mousePressEvent(QMouseEvent *e) {
+  if (e->button() == Qt::LeftButton) {
+    emit pressed();
+    emit pressed(e);
+  }
 }
 
-void qm_clickprogressbar::mousePressEvent (QMouseEvent *e)
-{
-    if(e->button() == Qt::LeftButton)
-    {
-        emit pressed();
-        emit pressed(e);
-    }
-}
+void qm_clickprogressbar::keyPressEvent(QKeyEvent *e) { e->ignore(); }
 
-void qm_clickprogressbar::keyPressEvent (QKeyEvent * e)
-{
-	e->ignore();
-}
+void qm_clickprogressbar::keyReleaseEvent(QKeyEvent *e) { e->ignore(); }
 
-void qm_clickprogressbar::keyReleaseEvent (QKeyEvent * e)
-{
-	e->ignore();
-}
-
-qm_clickprogressbar::~qm_clickprogressbar()
-{}
+qm_clickprogressbar::~qm_clickprogressbar() {}

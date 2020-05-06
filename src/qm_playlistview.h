@@ -19,129 +19,113 @@
 *  along with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-
 #ifndef QM_PLAYLIST_H
 #define QM_PLAYLIST_H
-#include <QtWidgets>
-#include <QDrag>
+#include "qm_browser_ids.h"
+#include "qm_commandlist.h"
+#include "qm_config.h"
+#include "qm_mpdcom.h"
+#include "qm_songinfo.h"
 #include <QApplication>
+#include <QDrag>
 #include <QHeaderView>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QInputDialog>
 #include <QKeyEvent>
 #include <QList>
 #include <QListIterator>
 #include <QMenu>
-#include <QTime>
-#include <QInputDialog>
 #include <QMessageBox>
 #include <QStringList>
+#include <QTime>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 #include <QUrl>
-#include "qm_songinfo.h"
-#include "qm_mpdcom.h"
-#include "qm_config.h"
-#include "qm_commandlist.h"
-#include "qm_browser_ids.h"
+#include <QtWidgets>
 
-#define set_id(id)  setData(0, Qt::UserRole + 1, id)
-#define set_state(state)  setData(0, Qt::UserRole + 2, state)
-#define set_time(time)   setData(0, Qt::UserRole + 4, time)
-#define set_file(file)   setData(0, Qt::UserRole + 5, file)
-#define set_type(type)   setData(0, Qt::UserRole + 6, type)
-#define set_pos(pos)   setData(0, Qt::UserRole + 7, pos)
+#define set_id(id) setData(0, Qt::UserRole + 1, id)
+#define set_state(state) setData(0, Qt::UserRole + 2, state)
+#define set_time(time) setData(0, Qt::UserRole + 4, time)
+#define set_file(file) setData(0, Qt::UserRole + 5, file)
+#define set_type(type) setData(0, Qt::UserRole + 6, type)
+#define set_pos(pos) setData(0, Qt::UserRole + 7, pos)
 
-#define get_id   data(0, Qt::UserRole + 1).toInt()
-#define get_state  data(0, Qt::UserRole + 2).toInt()
-#define get_time  data(0, Qt::UserRole + 4).toInt()
-#define get_file  data(0, Qt::UserRole + 5).toString()
-#define get_type  data(0, Qt::UserRole + 6).toInt()
-#define get_pos   data(0, Qt::UserRole + 7).toInt()
+#define get_id data(0, Qt::UserRole + 1).toInt()
+#define get_state data(0, Qt::UserRole + 2).toInt()
+#define get_time data(0, Qt::UserRole + 4).toInt()
+#define get_file data(0, Qt::UserRole + 5).toString()
+#define get_type data(0, Qt::UserRole + 6).toInt()
+#define get_pos data(0, Qt::UserRole + 7).toInt()
 
-#define STATE_NEW   0
-#define STATE_PLAYING  1
-#define STATE_PLAYED  2
+#define STATE_NEW 0
+#define STATE_PLAYING 1
+#define STATE_PLAYED 2
 
-class qm_plistview : public QTreeWidget
-{
-    Q_OBJECT
+class qm_plistview : public QTreeWidget {
+  Q_OBJECT
 
 public:
-    qm_plistview(QWidget * parent = nullptr);
-    virtual ~qm_plistview();
+  qm_plistview(QWidget *parent = nullptr);
+  virtual ~qm_plistview();
 
 public slots:
-    void set_newsong(int);
-    void set_status(int);
-    void set_markplayed();
-    void set_panel_maxmode(bool);
-    void set_connected(qm_mpdCom*, bool);
-    void set_config(qm_config*);
-    void select_it(int);
-    void dropEvent(QDropEvent *);
-    void on_open_with_request(const QString&);
-    void on_open_with_droprequest(QDropEvent*);
-    void set_auto_columns();
+  void set_newsong(int);
+  void set_status(int);
+  void set_markplayed();
+  void set_panel_maxmode(bool);
+  void set_connected(qm_mpdCom *, bool);
+  void set_config(qm_config *);
+  void select_it(int);
+  void dropEvent(QDropEvent *);
+  void on_open_with_request(const QString &);
+  void on_open_with_droprequest(QDropEvent *);
+  void set_auto_columns();
 
 protected slots:
-    void columnResized(int, int, int);
+  void columnResized(int, int, int);
 
 private slots:
-    void dragLeaveEvent(QDragLeaveEvent *);
-    void dragEnterEvent(QDragEnterEvent *);
-    void dragMoveEvent(QDragMoveEvent *);
-    void showLine_at(int);
-    void on_mpd_newlist(qm_songinfo, int);
-    void on_item_dclicked(QTreeWidgetItem *);
-    void clear_it();
-    void purge_it();
-    void shuffle_it();
-    void delete_it();
-    void save_it();
-    void save_selected();
-    void reset_played();
-    void reload_playlist();
-    void startDrag(Qt::DropActions);
+  void dragLeaveEvent(QDragLeaveEvent *);
+  void dragEnterEvent(QDragEnterEvent *);
+  void dragMoveEvent(QDragMoveEvent *);
+  void showLine_at(int);
+  void on_mpd_newlist(qm_songinfo, int);
+  void on_item_dclicked(QTreeWidgetItem *);
+  void clear_it();
+  void purge_it();
+  void shuffle_it();
+  void delete_it();
+  void save_it();
+  void save_selected();
+  void reset_played();
+  void reload_playlist();
+  void startDrag(Qt::DropActions);
 
 private:
-    bool
-        b_streamplaying,
-        b_mpd_connected,
-        b_waspurged,
-        b_panel_max;
+  bool b_streamplaying, b_mpd_connected, b_waspurged, b_panel_max;
 
-    QWidget *line;
+  QWidget *line;
 
-    int
-    current_songPos,
-    current_songID,
-    current_status,
-    dropBeforeIndex;
+  int current_songPos, current_songID, current_status, dropBeforeIndex;
 
-    qm_mpdCom *mpdCom;
-    QColor  col_default_fg,
-    col_playing_fg,
-    col_played_fg;
-    QHeaderView *plisthview;
-    qm_config *config;
-    QMenu *context_menu;
-    QString into_time(int);
-    QAction *a_shuffle,
-            *a_savelist,
-            *a_savesel,
-            *a_delsel,
-            *a_clearlist,
-           // *a_loadlist,
-            *a_playreset;
-    qm_IDlist get_played_IDs();
-    void contextMenuEvent(QContextMenuEvent *);
-    void keyPressEvent(QKeyEvent *);
-    void set_playlist_stats(int, int);
-    bool file_check(const QString &);
-    void fix_header();
+  qm_mpdCom *mpdCom;
+  QColor col_default_fg, col_playing_fg, col_played_fg;
+  QHeaderView *plisthview;
+  qm_config *config;
+  QMenu *context_menu;
+  QString into_time(int);
+  QAction *a_shuffle, *a_savelist, *a_savesel, *a_delsel, *a_clearlist,
+      // *a_loadlist,
+      *a_playreset;
+  qm_IDlist get_played_IDs();
+  void contextMenuEvent(QContextMenuEvent *);
+  void keyPressEvent(QKeyEvent *);
+  void set_playlist_stats(int, int);
+  bool file_check(const QString &);
+  void fix_header();
 
 signals:
-    void sgnl_plist_statistics(QString);
-    void sgnl_plist_dropreceived(int);
+  void sgnl_plist_statistics(QString);
+  void sgnl_plist_dropreceived(int);
 };
 
 #endif //  QM_PLAYLIST_H

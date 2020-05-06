@@ -23,53 +23,47 @@
 #define qm_listitemInfo_H
 
 #include <QString>
-#include <stdlib.h>
 #include <list>
+#include <stdlib.h>
 
-enum
-{
-    //  list item types
-    TP_ARTIST,
-    TP_ALBUM,
-    TP_GENRE,
-    TP_SONG,
-    TP_SONGX,		// external song
-    TP_NOSONG,
-    TP_STREAM,
-    TP_PLAYLIST,    // playlist in MPD's playlist dir
-    TP_DIRECTORY,
-    TP_PLISTITEM, 	// no drag&drop
-    TP_COMMENT,  	// no drag&drop
-    TP_NOITEM
+enum {
+  //  list item types
+  TP_ARTIST,
+  TP_ALBUM,
+  TP_GENRE,
+  TP_SONG,
+  TP_SONGX, // external song
+  TP_NOSONG,
+  TP_STREAM,
+  TP_PLAYLIST, // playlist in MPD's playlist dir
+  TP_DIRECTORY,
+  TP_PLISTITEM, // no drag&drop
+  TP_COMMENT,   // no drag&drop
+  TP_NOITEM
 };
 
-class qm_listitemInfo
-{
+class qm_listitemInfo {
 public:
-    qm_listitemInfo();
+  qm_listitemInfo();
 
-    int type;
-    int time;
-    QString disc;
-    QString artist;
-    QString album;
-    QString title;
-    QString file;
-    QString track;
-    QString name;
-    QString year;
-    QString moddate;
-    QString genre;
-    QString sorter;
+  int type;
+  int time;
+  QString disc;
+  QString artist;
+  QString album;
+  QString title;
+  QString file;
+  QString track;
+  QString name;
+  QString year;
+  QString moddate;
+  QString genre;
+  QString sorter;
 
-    // Override the < operator for alist.sort();
-    bool operator < (const qm_listitemInfo& litem)
-    {
-        return sorter < litem.sorter;
-    }
+  // Override the < operator for alist.sort();
+  bool operator<(const qm_listitemInfo &litem) { return sorter < litem.sorter; }
 };
 
-
-typedef std::list <qm_listitemInfo> qm_itemList;
+typedef std::list<qm_listitemInfo> qm_itemList;
 
 #endif // qm_listitemInfo_H

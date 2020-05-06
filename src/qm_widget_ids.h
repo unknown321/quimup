@@ -22,26 +22,25 @@
 #ifndef QM_WIDGET_ID_H
 #define QM_WIDGET_ID_H
 
-enum // ID # for widgets and tray-menu actions
-{
-	ID_prev, // previous track button
-	ID_stop, // stop button
-	ID_play, // play/pause button
-	ID_next, // next track button
-	ID_plst, // playlist button
-	ID_mmax, // mini/maxi mode button
-	ID_sets, // settings button
-	ID_rept, // repeat toggle button
-	ID_rand, // random toggle button
-	ID_info, // song info button
-	ID_volm, // volume slider
-	ID_pgrs, // progress bar
-	ID_time, // time +- clicklabel
-	ID_sled, // statusled clicked
-	ID_exit, // 'quit' from systray
-	ID_nocn, // 'no connection' for systray
-	ID_paus, // 'paused' state for systray
-	ID_idle  // 'no song' state for systray
+enum       // ID # for widgets and tray-menu actions
+{ ID_prev, // previous track button
+  ID_stop, // stop button
+  ID_play, // play/pause button
+  ID_next, // next track button
+  ID_plst, // playlist button
+  ID_mmax, // mini/maxi mode button
+  ID_sets, // settings button
+  ID_rept, // repeat toggle button
+  ID_rand, // random toggle button
+  ID_info, // song info button
+  ID_volm, // volume slider
+  ID_pgrs, // progress bar
+  ID_time, // time +- clicklabel
+  ID_sled, // statusled clicked
+  ID_exit, // 'quit' from systray
+  ID_nocn, // 'no connection' for systray
+  ID_paus, // 'paused' state for systray
+  ID_idle  // 'no song' state for systray
 };
 
 #endif // QM_WIDGET_ID_H

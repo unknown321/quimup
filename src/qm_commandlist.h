@@ -22,7 +22,6 @@
 #ifndef QM_COMMAND_H
 #define QM_COMMAND_H
 
-
 #define CMD_DEF 0 // default (none)
 #define CMD_DEL 1 // delete
 #define CMD_ADD 2 // apend
@@ -33,29 +32,25 @@
 #define CMD_SCN 7 // rescan
 #define CMD_UPD 8 // update
 
-
 #include <QList>
-#include <QTreeWidgetItem>
 #include <QString>
+#include <QTreeWidgetItem>
 
-typedef struct qm_mpd_command
-{
-    int cmd;
-    int songnr;
-    int songid;
-    int moveTo;
-    QString file;
-    /*  below: these are used by the playlist when
-    the library sends a commandlist to add items  */
-    int time;
-    int type;
-    QString artist;
-    QString album;
-    QString title;
-    QString track;
-}
-qm_mpd_command;
-
+typedef struct qm_mpd_command {
+  int cmd;
+  int songnr;
+  int songid;
+  int moveTo;
+  QString file;
+  /*  below: these are used by the playlist when
+  the library sends a commandlist to add items  */
+  int time;
+  int type;
+  QString artist;
+  QString album;
+  QString title;
+  QString track;
+} qm_mpd_command;
 
 typedef QList<qm_mpd_command> qm_commandList;
 

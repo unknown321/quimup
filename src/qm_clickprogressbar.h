@@ -25,26 +25,25 @@
 #include <QSlider>
 #include <qevent.h>
 
-class qm_clickprogressbar : public QSlider
-{
-	Q_OBJECT
+class qm_clickprogressbar : public QSlider {
+  Q_OBJECT
 
 public:
-    qm_clickprogressbar(QWidget *parent = nullptr);
-	virtual ~qm_clickprogressbar();
-	
+  qm_clickprogressbar(QWidget *parent = nullptr);
+  virtual ~qm_clickprogressbar();
+
 protected:
-	void keyPressEvent ( QKeyEvent * e);
-	void keyReleaseEvent ( QKeyEvent * e);
-	void mouseReleaseEvent ( QMouseEvent *e );
-	void mousePressEvent ( QMouseEvent *e );	
+  void keyPressEvent(QKeyEvent *e);
+  void keyReleaseEvent(QKeyEvent *e);
+  void mouseReleaseEvent(QMouseEvent *e);
+  void mousePressEvent(QMouseEvent *e);
 
 signals:
-	void clicked();
-	void clicked(QMouseEvent *e);
-	void pressed();
-	void pressed(QMouseEvent *e);
-	void scrolled(int);
+  void clicked();
+  void clicked(QMouseEvent *e);
+  void pressed();
+  void pressed(QMouseEvent *e);
+  void scrolled(int);
 };
 
 #endif // QM_CPROGRESSB

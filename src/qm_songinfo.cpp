@@ -19,34 +19,27 @@
 *  along with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-
 #include "qm_songinfo.h"
 
-qm_songInfo::qm_songInfo()
-{
-    reset();
+qm_songInfo::qm_songInfo() { reset(); }
+
+void qm_songInfo::reset() {
+  nosong = true;
+  songNr = -1;
+  songID = -1;
+  time = -1;
+  type = -1;
+  disc = "";
+  file = "";
+  name = "";
+  artist = "";
+  title = "";
+  album = "";
+  date = "";
+  track = "";
+  disc = "";
+  genre = "";
+  comment = "";
 }
 
-void qm_songInfo::reset()
-{
-    nosong = true;
-    songNr = -1;
-    songID = -1;
-    time = -1;
-    type = -1;
-    disc = "";
-    file = "";
-    name = "";
-    artist = "";
-    title = "";
-    album = "";
-    date = "";
-    track = "";
-    disc = "";
-    genre = "";
-    comment = "";
-}
-
-qm_songInfo::~qm_songInfo()
-{
-}
+qm_songInfo::~qm_songInfo() {}

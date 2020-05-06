@@ -22,34 +22,33 @@
 #ifndef QM_SONGINFO_H
 #define QM_SONGINFO_H
 
-# include <QString>
-# include <QList>
+#include <QList>
+#include <QString>
 
-class qm_songInfo
-{
+class qm_songInfo {
 public:
-    qm_songInfo();
-    virtual ~qm_songInfo();
+  qm_songInfo();
+  virtual ~qm_songInfo();
 
-    void reset();
+  void reset();
 
-    bool nosong;// NULL song
-    int songNr; // pos in list
-    int songID; // ID in list
-    int time;
-    int type;
-    QString disc;
-    QString file;
-    QString name;
-    QString artist;
-    QString title;
-    QString album;
-    QString date;
-    QString track;
-    QString genre;
-    QString comment;
+  bool nosong; // NULL song
+  int songNr;  // pos in list
+  int songID;  // ID in list
+  int time;
+  int type;
+  QString disc;
+  QString file;
+  QString name;
+  QString artist;
+  QString title;
+  QString album;
+  QString date;
+  QString track;
+  QString genre;
+  QString comment;
 };
 
-typedef QList <qm_songInfo> qm_songinfo;
+typedef QList<qm_songInfo> qm_songinfo;
 
 #endif // QM_SONGINFO_H

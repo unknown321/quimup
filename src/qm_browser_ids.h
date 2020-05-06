@@ -22,33 +22,30 @@
 #ifndef qm_browser_IDS_H
 #define qm_browser_IDS_H
 
-enum
-{   // library modes
-    LB_ID_ARTIST,
-    LB_ID_ALBUM,
-    LB_ID_DATE,
-	LB_ID_YEAR,
-    LB_ID_GENRE,
-    LB_ID_PLIST,
-    LB_ID_DIR,
-    LB_ID_SEARCH
+enum { // library modes
+  LB_ID_ARTIST,
+  LB_ID_ALBUM,
+  LB_ID_DATE,
+  LB_ID_YEAR,
+  LB_ID_GENRE,
+  LB_ID_PLIST,
+  LB_ID_DIR,
+  LB_ID_SEARCH
 };
 
-enum
-{// search modes // keep this order!
-    SR_ID_ARTIST,
-    SR_ID_ALBUM,
-    SR_ID_TITLE,
-    SR_ID_GENRE,
-	SR_ID_DIR
+enum { // search modes // keep this order!
+  SR_ID_ARTIST,
+  SR_ID_ALBUM,
+  SR_ID_TITLE,
+  SR_ID_GENRE,
+  SR_ID_DIR
 };
 
-enum
-{// select modes // keep this order!
-    SL_ID_ARTIST,
-    SL_ID_ALBUM,
-    SL_ID_TITLE,
-    SL_ID_ALL
+enum { // select modes // keep this order!
+  SL_ID_ARTIST,
+  SL_ID_ALBUM,
+  SL_ID_TITLE,
+  SL_ID_ALL
 };
 
 #endif // qm_browser_IDS_H
