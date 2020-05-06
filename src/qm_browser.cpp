@@ -190,6 +190,77 @@ void qm_browser::setupUI() {
 
   vbox_all->addWidget(theSplitter);
 
+  right_group2 = new QLabel(theSplitter);
+  right_group2->setMinimumSize(QSize(300, 0));
+  right_group2->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
+
+  vbox_righthalf2 = new QVBoxLayout(right_group2);
+  vbox_righthalf2->setSpacing(4);
+  vbox_righthalf2->setMargin(2);
+
+  lb_right_title2 = new QLabel;
+  lb_right_title2->setTextFormat(Qt::RichText);
+  lb_right_title2->setAlignment(Qt::AlignCenter);
+  lb_right_title2->setAutoFillBackground(true);
+  lb_right_title2->setMargin(1);
+  vbox_righthalf2->addWidget(lb_right_title2);
+
+  hbox_rightop2 = new QHBoxLayout();
+  hbox_rightop2->setSpacing(4);
+  hbox_rightop2->setMargin(0);
+
+  spacer5 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+  hbox_rightop2->addItem(spacer5);
+
+  bt_playlist2 = new QPushButton();
+  bt_playlist2->setMinimumSize(QSize(24, 22));
+  bt_playlist2->setMaximumHeight(22);
+  bt_playlist2->setIcon(QIcon(":/tr_expand1.png"));
+  // bt_playlist->setFlat(true);
+  hbox_rightop2->addWidget(bt_playlist2);
+
+  spacer6 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+  hbox_rightop2->addItem(spacer6);
+
+  vbox_righthalf2->addLayout(hbox_rightop2);
+
+  plist_view2 = new qm_plistview(right_group2);
+  plist_view2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+  plist_view2->setVerticalScrollBarPolicy(
+      Qt::ScrollBarAlwaysOn); // avoid problems with viewport()->width();
+  plist_view2->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+  plist_view2->setUniformRowHeights(true);
+  plist_view2->setAlternatingRowColors(true);
+  vbox_righthalf2->addWidget(plist_view2);
+
+  lb_pliststats2 = new QLabel();
+  lb_pliststats2->setAlignment(Qt::AlignHCenter);
+  lb_pliststats2->setAutoFillBackground(true);
+  vbox_righthalf2->addWidget(lb_pliststats2);
+
+  hbox_rightbottom2 = new QHBoxLayout();
+  hbox_rightbottom2->setSpacing(4);
+  hbox_rightbottom2->setMargin(0);
+  cb_selectmode2 = new QComboBox();
+  cb_selectmode2->setMinimumSize(QSize(100, 26));
+  cb_selectmode2->setMaximumHeight(26);
+  hbox_rightbottom2->addWidget(cb_selectmode2);
+
+  le_select2 = new QLineEdit();
+  le_select2->setMinimumSize(QSize(0, 24));
+  le_select2->setMaximumHeight(24);
+  hbox_rightbottom2->addWidget(le_select2);
+
+  bt_select2 = new QPushButton();
+  bt_select2->setMinimumSize(QSize(100, 26));
+  bt_select2->setMaximumHeight(26);
+  bt_select2->setIcon(QIcon(":/tr_pointleft.png"));
+  hbox_rightbottom2->addWidget(bt_select2);
+
+  vbox_righthalf2->addLayout(hbox_rightbottom2);
+
+  theSplitter->addWidget(right_group2);
+
   cb_dbasemode->addItem(QIcon(":/tr_artist.png"), tr("Artists"));
   cb_dbasemode->addItem(QIcon(":/tr_album.png"), tr("Albums"));
   cb_dbasemode->addItem(QIcon(":/tr_albumdate.png"), tr("Timestamp"));
@@ -383,12 +454,14 @@ void qm_browser::retranslateUI() {
   }
 
   bt_select->setText(tr("Select"));
+  bt_select2->setText(tr("Select"));
   bt_search->setText(tr("Search"));
   bt_update->setText(tr("Update"));
   bt_options->setText(tr("Options"));
   bt_stream->setText(tr("Stream"));
   lb_left_title->setText("<b>" + tr("Library") + "</b>");
   lb_right_title->setText("<b>" + tr("Playlist") + "</b>");
+  lb_right_title2->setText("<b>" + tr("Playlist 2") + "</b>");
 }
 
 void qm_browser::set_config(qm_config *conf) {
@@ -407,11 +480,13 @@ void qm_browser::set_config(qm_config *conf) {
   cb_selectmode->setCurrentIndex(config->browser_selectmode);
   config->select_string = "";
   le_select->setText(config->select_string);
+  le_select2->setText(config->select_string);
 
   // set the splitter pos
   QList<int> List;
   List.append(config->browser_L_splitter);
   List.append(config->browser_R_splitter);
+  List.append(config->browser_R_splitter2);
   theSplitter->setSizes(List);
 
   resize(config->browser_W, config->browser_H);
@@ -422,6 +497,7 @@ void qm_browser::splittermoved() {
       theSplitter->sizes().value(1) != 0) {
     config->browser_L_splitter = theSplitter->sizes().value(0);
     config->browser_R_splitter = theSplitter->sizes().value(1);
+    config->browser_R_splitter2 = theSplitter->sizes().value(2);
   }
 }
 

@@ -110,6 +110,7 @@ void qm_config::save_config() {
   sts.setValue("browser_H", browser_H);
   sts.setValue("browser_L_splitter", browser_L_splitter);
   sts.setValue("browser_R_splitter", browser_R_splitter);
+  sts.setValue("browser_R_splitter2", browser_R_splitter2);
   sts.setValue("browser_libmode", browser_libmode);
   sts.setValue("browser_searchmode", browser_searchmode);
   sts.setValue("browser_selectmode", browser_selectmode);
@@ -228,6 +229,7 @@ void qm_config::load_config() {
   browser_H = sts.value("browser_H", 360).toInt();
   browser_L_splitter = sts.value("browser_L_splitter", 240).toInt();
   browser_R_splitter = sts.value("browser_R_splitter", 340).toInt();
+  browser_R_splitter2 = sts.value("browser_R_splitter2", 340).toInt();
   browser_libmode = sts.value("browser_libmode", 0).toInt();
   browser_searchmode = sts.value("browser_searchmode", 0).toInt();
   browser_selectmode = sts.value("browser_selectmode", 0).toInt();

@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = quimup1.0.0
-DISTDIR = /tmp/Quimup_1.4.4_source/build/release/.obj/unix/quimup1.0.0
+DISTDIR = /opt/software/Quimup_1.4.4_source/build/release/.obj/unix/quimup1.0.0
 LINK          = g++
 LFLAGS        = -m64 -Wl,-O1
 LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lmpdclient -ltag -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Core -lGL -lpthread 
@@ -497,136 +497,136 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) build/release/.moc/moc_qm_clicklabel.cpp build/release/.moc/moc_qm_clickprogressbar.cpp build/release/.moc/moc_qm_core.cpp build/release/.moc/moc_qm_mpdcom.cpp build/release/.moc/moc_qm_player.cpp build/release/.moc/moc_qm_scroller.cpp build/release/.moc/moc_qm_trayicon.cpp build/release/.moc/moc_qm_settings.cpp build/release/.moc/moc_qm_browser.cpp build/release/.moc/moc_qm_playlistview.cpp build/release/.moc/moc_qm_libraryview.cpp build/release/.moc/moc_qm_streamloader.cpp build/release/.moc/moc_qm_colorpicker.cpp build/release/.moc/moc_qtlocalpeer.cpp build/release/.moc/moc_qtsingleapplication.cpp
 build/release/.moc/moc_qm_clicklabel.cpp: src/qm_clicklabel.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_clicklabel.h -o build/release/.moc/moc_qm_clicklabel.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_clicklabel.h -o build/release/.moc/moc_qm_clicklabel.cpp
 
 build/release/.moc/moc_qm_clickprogressbar.cpp: src/qm_clickprogressbar.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_clickprogressbar.h -o build/release/.moc/moc_qm_clickprogressbar.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_clickprogressbar.h -o build/release/.moc/moc_qm_clickprogressbar.cpp
 
 build/release/.moc/moc_qm_core.cpp: src/qm_player.h \
+		src/qm_browser.h \
+		src/qm_browser_ids.h \
+		src/qm_commandlist.h \
+		src/qm_config.h \
+		src/qm_libraryview.h \
+		src/qm_itemlist.h \
+		src/qm_mpdcom.h \
+		src/qm_songinfo.h \
+		src/qm_playlistview.h \
+		src/qm_streamloader.h \
 		src/qm_clicklabel.h \
 		src/qm_clickprogressbar.h \
-		src/qm_config.h \
-		src/qm_mpdcom.h \
-		src/qm_songinfo.h \
-		src/qm_itemlist.h \
-		src/qm_commandlist.h \
-		src/qm_trayicon.h \
-		src/qm_widget_ids.h \
 		src/qm_scroller.h \
 		src/qm_settings.h \
 		src/qm_colorpicker.h \
-		src/qm_browser.h \
-		src/qm_browser_ids.h \
-		src/qm_playlistview.h \
-		src/qm_libraryview.h \
-		src/qm_streamloader.h \
+		src/qm_trayicon.h \
+		src/qm_widget_ids.h \
 		src/qm_core.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_core.h -o build/release/.moc/moc_qm_core.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_core.h -o build/release/.moc/moc_qm_core.cpp
 
-build/release/.moc/moc_qm_mpdcom.cpp: src/qm_config.h \
-		src/qm_songinfo.h \
+build/release/.moc/moc_qm_mpdcom.cpp: src/qm_commandlist.h \
+		src/qm_config.h \
 		src/qm_itemlist.h \
-		src/qm_commandlist.h \
+		src/qm_songinfo.h \
 		src/qm_mpdcom.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_mpdcom.h -o build/release/.moc/moc_qm_mpdcom.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_mpdcom.h -o build/release/.moc/moc_qm_mpdcom.cpp
 
-build/release/.moc/moc_qm_player.cpp: src/qm_clicklabel.h \
-		src/qm_clickprogressbar.h \
+build/release/.moc/moc_qm_player.cpp: src/qm_browser.h \
+		src/qm_browser_ids.h \
+		src/qm_commandlist.h \
 		src/qm_config.h \
+		src/qm_libraryview.h \
+		src/qm_itemlist.h \
 		src/qm_mpdcom.h \
 		src/qm_songinfo.h \
-		src/qm_itemlist.h \
-		src/qm_commandlist.h \
-		src/qm_trayicon.h \
-		src/qm_widget_ids.h \
+		src/qm_playlistview.h \
+		src/qm_streamloader.h \
+		src/qm_clicklabel.h \
+		src/qm_clickprogressbar.h \
 		src/qm_scroller.h \
 		src/qm_settings.h \
 		src/qm_colorpicker.h \
-		src/qm_browser.h \
-		src/qm_browser_ids.h \
-		src/qm_playlistview.h \
-		src/qm_libraryview.h \
-		src/qm_streamloader.h \
+		src/qm_trayicon.h \
+		src/qm_widget_ids.h \
 		src/qm_player.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_player.h -o build/release/.moc/moc_qm_player.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_player.h -o build/release/.moc/moc_qm_player.cpp
 
 build/release/.moc/moc_qm_scroller.cpp: src/qm_scroller.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_scroller.h -o build/release/.moc/moc_qm_scroller.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_scroller.h -o build/release/.moc/moc_qm_scroller.cpp
 
-build/release/.moc/moc_qm_trayicon.cpp: src/qm_widget_ids.h \
-		src/qm_mpdcom.h \
-		src/qm_config.h \
-		src/qm_songinfo.h \
-		src/qm_itemlist.h \
+build/release/.moc/moc_qm_trayicon.cpp: src/qm_mpdcom.h \
 		src/qm_commandlist.h \
+		src/qm_config.h \
+		src/qm_itemlist.h \
+		src/qm_songinfo.h \
+		src/qm_widget_ids.h \
 		src/qm_trayicon.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_trayicon.h -o build/release/.moc/moc_qm_trayicon.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_trayicon.h -o build/release/.moc/moc_qm_trayicon.cpp
 
-build/release/.moc/moc_qm_settings.cpp: src/qm_config.h \
+build/release/.moc/moc_qm_settings.cpp: src/qm_colorpicker.h \
+		src/qm_config.h \
 		src/qm_mpdcom.h \
-		src/qm_songinfo.h \
-		src/qm_itemlist.h \
 		src/qm_commandlist.h \
-		src/qm_colorpicker.h \
+		src/qm_itemlist.h \
+		src/qm_songinfo.h \
 		src/qm_settings.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_settings.h -o build/release/.moc/moc_qm_settings.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_settings.h -o build/release/.moc/moc_qm_settings.cpp
 
-build/release/.moc/moc_qm_browser.cpp: src/qm_config.h \
-		src/qm_browser_ids.h \
-		src/qm_playlistview.h \
-		src/qm_songinfo.h \
-		src/qm_mpdcom.h \
-		src/qm_itemlist.h \
+build/release/.moc/moc_qm_browser.cpp: src/qm_browser_ids.h \
 		src/qm_commandlist.h \
+		src/qm_config.h \
 		src/qm_libraryview.h \
+		src/qm_itemlist.h \
+		src/qm_mpdcom.h \
+		src/qm_songinfo.h \
+		src/qm_playlistview.h \
 		src/qm_streamloader.h \
 		src/qm_browser.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_browser.h -o build/release/.moc/moc_qm_browser.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_browser.h -o build/release/.moc/moc_qm_browser.cpp
 
-build/release/.moc/moc_qm_playlistview.cpp: src/qm_songinfo.h \
-		src/qm_mpdcom.h \
-		src/qm_config.h \
-		src/qm_itemlist.h \
+build/release/.moc/moc_qm_playlistview.cpp: src/qm_browser_ids.h \
 		src/qm_commandlist.h \
-		src/qm_browser_ids.h \
+		src/qm_config.h \
+		src/qm_mpdcom.h \
+		src/qm_itemlist.h \
+		src/qm_songinfo.h \
 		src/qm_playlistview.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_playlistview.h -o build/release/.moc/moc_qm_playlistview.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_playlistview.h -o build/release/.moc/moc_qm_playlistview.cpp
 
-build/release/.moc/moc_qm_libraryview.cpp: src/qm_songinfo.h \
-		src/qm_mpdcom.h \
+build/release/.moc/moc_qm_libraryview.cpp: src/qm_browser_ids.h \
+		src/qm_commandlist.h \
 		src/qm_config.h \
 		src/qm_itemlist.h \
-		src/qm_commandlist.h \
-		src/qm_browser_ids.h \
+		src/qm_mpdcom.h \
+		src/qm_songinfo.h \
 		src/qm_libraryview.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_libraryview.h -o build/release/.moc/moc_qm_libraryview.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_libraryview.h -o build/release/.moc/moc_qm_libraryview.cpp
 
 build/release/.moc/moc_qm_streamloader.cpp: src/qm_streamloader.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_streamloader.h -o build/release/.moc/moc_qm_streamloader.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_streamloader.h -o build/release/.moc/moc_qm_streamloader.cpp
 
 build/release/.moc/moc_qm_colorpicker.cpp: src/qm_colorpicker.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_colorpicker.h -o build/release/.moc/moc_qm_colorpicker.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qm_colorpicker.h -o build/release/.moc/moc_qm_colorpicker.cpp
 
 build/release/.moc/moc_qtlocalpeer.cpp: src/qtlockedfile.h \
 		src/qtlocalpeer.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qtlocalpeer.h -o build/release/.moc/moc_qtlocalpeer.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qtlocalpeer.h -o build/release/.moc/moc_qtlocalpeer.cpp
 
 build/release/.moc/moc_qtsingleapplication.cpp: src/qtsingleapplication.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/tmp/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qtsingleapplication.h -o build/release/.moc/moc_qtsingleapplication.cpp
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/opt/software/Quimup_1.4.4_source -I/usr/include/taglib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include src/qtsingleapplication.h -o build/release/.moc/moc_qtsingleapplication.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -642,26 +642,26 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean
 
 ####### Compile
 
-build/release/.obj/unix/main.o: src/main.cpp src/qtsingleapplication.h \
-		src/qm_core.h \
+build/release/.obj/unix/main.o: src/main.cpp src/qm_core.h \
 		src/qm_player.h \
-		src/qm_clicklabel.h \
-		src/qm_clickprogressbar.h \
+		src/qm_browser.h \
+		src/qm_browser_ids.h \
+		src/qm_commandlist.h \
 		src/qm_config.h \
+		src/qm_libraryview.h \
+		src/qm_itemlist.h \
 		src/qm_mpdcom.h \
 		src/qm_songinfo.h \
-		src/qm_itemlist.h \
-		src/qm_commandlist.h \
-		src/qm_trayicon.h \
-		src/qm_widget_ids.h \
+		src/qm_playlistview.h \
+		src/qm_streamloader.h \
+		src/qm_clicklabel.h \
+		src/qm_clickprogressbar.h \
 		src/qm_scroller.h \
 		src/qm_settings.h \
 		src/qm_colorpicker.h \
-		src/qm_browser.h \
-		src/qm_browser_ids.h \
-		src/qm_playlistview.h \
-		src/qm_libraryview.h \
-		src/qm_streamloader.h
+		src/qm_trayicon.h \
+		src/qm_widget_ids.h \
+		src/qtsingleapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/main.o src/main.cpp
 
 build/release/.obj/unix/qm_clicklabel.o: src/qm_clicklabel.cpp src/qm_clicklabel.h
@@ -675,101 +675,101 @@ build/release/.obj/unix/qm_config.o: src/qm_config.cpp src/qm_config.h
 
 build/release/.obj/unix/qm_core.o: src/qm_core.cpp src/qm_core.h \
 		src/qm_player.h \
-		src/qm_clicklabel.h \
-		src/qm_clickprogressbar.h \
+		src/qm_browser.h \
+		src/qm_browser_ids.h \
+		src/qm_commandlist.h \
 		src/qm_config.h \
+		src/qm_libraryview.h \
+		src/qm_itemlist.h \
 		src/qm_mpdcom.h \
 		src/qm_songinfo.h \
-		src/qm_itemlist.h \
-		src/qm_commandlist.h \
-		src/qm_trayicon.h \
-		src/qm_widget_ids.h \
+		src/qm_playlistview.h \
+		src/qm_streamloader.h \
+		src/qm_clicklabel.h \
+		src/qm_clickprogressbar.h \
 		src/qm_scroller.h \
 		src/qm_settings.h \
 		src/qm_colorpicker.h \
-		src/qm_browser.h \
-		src/qm_browser_ids.h \
-		src/qm_playlistview.h \
-		src/qm_libraryview.h \
-		src/qm_streamloader.h
+		src/qm_trayicon.h \
+		src/qm_widget_ids.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_core.o src/qm_core.cpp
 
 build/release/.obj/unix/qm_mpdcom.o: src/qm_mpdcom.cpp src/qm_mpdcom.h \
+		src/qm_commandlist.h \
 		src/qm_config.h \
-		src/qm_songinfo.h \
 		src/qm_itemlist.h \
-		src/qm_commandlist.h
+		src/qm_songinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_mpdcom.o src/qm_mpdcom.cpp
 
 build/release/.obj/unix/qm_player.o: src/qm_player.cpp src/qm_player.h \
-		src/qm_clicklabel.h \
-		src/qm_clickprogressbar.h \
+		src/qm_browser.h \
+		src/qm_browser_ids.h \
+		src/qm_commandlist.h \
 		src/qm_config.h \
+		src/qm_libraryview.h \
+		src/qm_itemlist.h \
 		src/qm_mpdcom.h \
 		src/qm_songinfo.h \
-		src/qm_itemlist.h \
-		src/qm_commandlist.h \
-		src/qm_trayicon.h \
-		src/qm_widget_ids.h \
+		src/qm_playlistview.h \
+		src/qm_streamloader.h \
+		src/qm_clicklabel.h \
+		src/qm_clickprogressbar.h \
 		src/qm_scroller.h \
 		src/qm_settings.h \
 		src/qm_colorpicker.h \
-		src/qm_browser.h \
-		src/qm_browser_ids.h \
-		src/qm_playlistview.h \
-		src/qm_libraryview.h \
-		src/qm_streamloader.h
+		src/qm_trayicon.h \
+		src/qm_widget_ids.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_player.o src/qm_player.cpp
 
 build/release/.obj/unix/qm_scroller.o: src/qm_scroller.cpp src/qm_scroller.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_scroller.o src/qm_scroller.cpp
 
 build/release/.obj/unix/qm_trayicon.o: src/qm_trayicon.cpp src/qm_trayicon.h \
-		src/qm_widget_ids.h \
 		src/qm_mpdcom.h \
+		src/qm_commandlist.h \
 		src/qm_config.h \
-		src/qm_songinfo.h \
 		src/qm_itemlist.h \
-		src/qm_commandlist.h
+		src/qm_songinfo.h \
+		src/qm_widget_ids.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_trayicon.o src/qm_trayicon.cpp
 
 build/release/.obj/unix/qm_settings.o: src/qm_settings.cpp src/qm_settings.h \
+		src/qm_colorpicker.h \
 		src/qm_config.h \
 		src/qm_mpdcom.h \
-		src/qm_songinfo.h \
-		src/qm_itemlist.h \
 		src/qm_commandlist.h \
-		src/qm_colorpicker.h
+		src/qm_itemlist.h \
+		src/qm_songinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_settings.o src/qm_settings.cpp
 
 build/release/.obj/unix/qm_browser.o: src/qm_browser.cpp src/qm_browser.h \
-		src/qm_config.h \
 		src/qm_browser_ids.h \
-		src/qm_playlistview.h \
-		src/qm_songinfo.h \
-		src/qm_mpdcom.h \
-		src/qm_itemlist.h \
 		src/qm_commandlist.h \
+		src/qm_config.h \
 		src/qm_libraryview.h \
+		src/qm_itemlist.h \
+		src/qm_mpdcom.h \
+		src/qm_songinfo.h \
+		src/qm_playlistview.h \
 		src/qm_streamloader.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_browser.o src/qm_browser.cpp
 
 build/release/.obj/unix/qm_playlistview.o: src/qm_playlistview.cpp src/qm_playlistview.h \
-		src/qm_songinfo.h \
-		src/qm_mpdcom.h \
-		src/qm_config.h \
-		src/qm_itemlist.h \
+		src/qm_browser_ids.h \
 		src/qm_commandlist.h \
-		src/qm_browser_ids.h
+		src/qm_config.h \
+		src/qm_mpdcom.h \
+		src/qm_itemlist.h \
+		src/qm_songinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_playlistview.o src/qm_playlistview.cpp
 
 build/release/.obj/unix/qm_libraryview.o: src/qm_libraryview.cpp src/qm_libraryview.h \
-		src/qm_songinfo.h \
-		src/qm_mpdcom.h \
+		src/qm_browser_ids.h \
+		src/qm_commandlist.h \
 		src/qm_config.h \
 		src/qm_itemlist.h \
-		src/qm_commandlist.h \
-		src/qm_browser_ids.h
+		src/qm_mpdcom.h \
+		src/qm_songinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/release/.obj/unix/qm_libraryview.o src/qm_libraryview.cpp
 
 build/release/.obj/unix/qm_itemlist.o: src/qm_itemlist.cpp src/qm_itemlist.h
@@ -850,7 +850,6 @@ install:  FORCE
 uninstall:  FORCE
 
 FORCE:
-
 
 format:
 	@-clang-format -i src/*

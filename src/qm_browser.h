@@ -57,6 +57,7 @@ public:
   virtual ~qm_browser();
 
   qm_plistview *plist_view;
+  qm_plistview *plist_view2;
   qm_libview *lib_view;
 
 public slots:
@@ -125,6 +126,20 @@ private:
   QComboBox *cb_selectmode;
   QLineEdit *le_select;
   QPushButton *bt_select;
+
+  QLabel *right_group2;
+  QLabel *lb_right_title2;
+  QVBoxLayout *vbox_righthalf2;
+  QHBoxLayout *hbox_rightop2;
+  QSpacerItem *spacer5;
+  QPushButton *bt_playlist2;
+  QSpacerItem *spacer6;
+  QPushButton *bt_options2;
+  QLabel *lb_pliststats2;
+  QHBoxLayout *hbox_rightbottom2;
+  QComboBox *cb_selectmode2;
+  QLineEdit *le_select2;
+  QPushButton *bt_select2;
 
   bool b_mpd_connected, b_startup;
   qm_config *config;

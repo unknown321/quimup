@@ -112,6 +112,7 @@ public:
   int browser_H;
   int browser_L_splitter;
   int browser_R_splitter;
+  int browser_R_splitter2;
   int browser_libmode;
   int browser_searchmode;
   int browser_selectmode;
