@@ -1,0 +1,107 @@
+
+
+     ..|''||   '||'  '|' '||' '||    ||' '||'  '|' '||''|.  
+    .|'    ||   ||    |   ||   |||  |||   ||    |   ||   || 
+    ||      ||  ||    |   ||   |'|..'||   ||    |   ||...|' 
+    '|.  '. '|  ||    |   ||   | '|' ||   ||    |   ||      
+      '|...'|.   '|..'   .||. .|. | .||.   '|..'   .||.  
+
+    __________________________________________________________________________
+
+    QUIMUP
+    version 1.4.4
+
+    for MPD 0.17.0 and above
+
+    quimup@jhanalog.com
+
+    __________________________________________________________________________
+
+    QUIMUP is a client for the Music Player Daemon (MPD) written in c++ and
+    QT5. The program can be used with most Linux desktops (KDE, GNOME, XFCE)
+    and is covered by the General Public License (see LICENSE below).
+
+    The clean interface makes controlling MPD's features easy and intuitive.
+    The focus is on mouse handling: playlist management is done entirely by
+    drag-&-drop; all playback functions are accessible from the system tray.
+    Quimup aims to turn MPD into a perfect desktop music player.
+
+    Copyright (C) 2008 - 2018 Johan Spee
+    __________________________________________________________________________
+
+    LICENSE
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program (the file named COPYING).
+    If not, see http://www.gnu.org/licenses/
+    __________________________________________________________________________
+
+    DEPENDENCIES
+
+    REQUIRES : MPD             (>= 0.17)
+    
+    DEPENDS  : libmpdclient2   (>= 2.3 )
+    DEPENDS  : taglib          (>= 1.11 )
+    
+      QT 5:
+    DEPENDS  : qtcore          (>= 5.1 )
+    DEPENDS  : qtgui           (>= 5.1 )
+    DEPENDS  : qtnetwork       (>= 5.1 )
+    
+
+    To COMPILE from source additionally install the QT5, libmpdclient and
+    taglib development files.
+    QT5 may inlude qtbase-dev, qt5-default, qmake-qt5, qt-creator.. etc.
+    
+    Plus the usual: qmake, make, gcc, cpp, g++, pkg-config, autoconf etc.
+
+    [1] To create the makefile run: qmake (or qmake-qt5).
+
+    [2] To compile, next run: make.
+
+    [3] To install the binary: 
+	sudo cp ./quimup /usr/bin/quimup
+	(or run it from the source directory)
+    __________________________________________________________________________
+
+    KDE, GNOME and XFCE
+
+    Altough the program depends on some QT5 libraries it does not require KDE
+    or depend on other KDE libraries, nor is it integrated with KDE in any way.
+
+    __________________________________________________________________________
+
+    ** USING QUIMUP **
+
+    CHECK OUT : FAQ.txt
+    CHECK OUT : TIPS IN THE SETTINGS WINDOW's ABOUT TAB
+
+    If MPD is configured correctly it's all click, drag and drop really.
+
+    EXTERNAL FILES
+
+    Files that are not in the database can be dropped on the player or on the
+    playlist. Alternatively use the 'send to' or 'open with' command in your
+    file manager or create a custom 'action'(pass %U or %F).
+
+    But ..this will only work if the connection with mpd is established through
+    a so called socket. In MPD's configuration file the 'bind_to_address' must
+    point to "/home/USER/.mpd/socket" (replace USER with the name of your home
+    dir). In Quimup's login profile (in the settings window) 'Host' must be
+    set exactly the same.
+
+    It may be necessary to associate relevant file types to 'open with' 
+    Quimup (this is usually done in the file's 'properties' tab). Make sure
+    to use 'quimup %U' rather than just 'quimup' as command.
+    __________________________________________________________________________
+

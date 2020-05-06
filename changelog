@@ -1,0 +1,138 @@
+
+     ..|''||   '||'  '|' '||' '||    ||' '||'  '|' '||''|.  
+    .|'    ||   ||    |   ||   |||  |||   ||    |   ||   || 
+    ||      ||  ||    |   ||   |'|..'||   ||    |   ||...|' 
+    '|.  '. '|  ||    |   ||   | '|' ||   ||    |   ||      
+      '|...'|.   '|..'   .||. .|. | .||.   '|..'   .||.  
+
+    Change Log
+_____________________________________________________________
+
+   version x.y.z (superior.major.minor)
+   
+   
+   
+   v. 1.4.4  2018 12 20
+ 
+   * Fixed: Wrong time-stamp for some (single track) albums.
+   * Fixed: Using the systray Quimup always started minimized.
+   * Fixed: Player was not the active window after startup.
+   * Fixed: Files dropped on playlist are inserted at position.
+   * Fixed: Crash with deleted/moved external playlist items.
+   * Fixed: Compilation error on Mageia (thanks David Geiger).
+   * Fixed: libpng warning: iCCP: known incorrect sRGB profile.
+   * Coded: Fixed many new c++ compiler warnings (not errors).
+   * Coded: Added Taglib version check in qm_player (openSuse).
+   * Other: Autoconfig searches more places for mpd.conf
+   * Other: Settings window is now resizable (as it should be).
+   * Other: Some changes in 'about' text and 'Settings' layout.
+   
+   
+   v. 1.4.3  2018 01 01
+   
+   * Fixed: Possible crash when connection to MPD was lost.
+   * Fixed: Settings window could be too small for comfort.
+   * Fixed: Column widths not set in Library and Playlist view.
+   * Fixed: Obsolete email address in 'about'.
+   * Added: Option to start player minimized.
+   * Other: Minor cosmetic changes.
+   
+   
+   v. 1.4.2  2016 05 15
+   
+   * Added: Use flac-type embedded cover art from ogg file.
+   
+   
+   v. 1.4.1  2016 04 01
+
+   * Fixed: 'Auto' profile wrongly found multiple config files.
+   * Fixed: On startup player could show 2 close buttons.
+   * Fixed: Folder browser did not list .m3u playlists
+   * Coded: Added #include <QDataStream> to qtlocalpeer.h
+   * Other: Minor changes in dialog text and command-line output.
+   
+   
+   v. 1.4.0  2015 02 01
+   
+   Quimup 1.4.0 depends on QT5 libs!
+   
+   * Coded: Migrated the code to QT5
+   * Fixed: After changing colors wrong album-art could be shown.
+   * Added: Use embedded cover art from asf and ape-tagged mp3.
+   
+   
+   v. 1.3.2   2014 06 12
+
+   Quimup 1.3.2 depends (also) on taglib.
+
+   * Fixed: Provided password was not used unconditionally.
+   * Fixed: Playlist not updated when a dropped item was rejected.
+   * Fixed: Settings were not saved upon system shutdown/logout.
+   * Fixed: Could not find translation(s) in default location.
+   * Fixed: Music dir was not always found automatically.
+   * Added: Use embedded cover art (mp3 ogg mpc mp4 flac wv ape).
+   * Added: Player and Browser now respond to 'media keys'.
+   * Added: Support for *.cue playlist files in folder view.
+   * Added: 'Reset status' to playlist context menu.
+   * Added: '-l none' to cmd parameters to force internal locale.
+   * Added: More extensions are accepted for D&D operations.
+   * Other: Some cosmetic tweaks, as usual.
+
+
+   v. 1.3.1   2013 12 02
+
+   * Added: Support for the 'Disc Number' tag.
+   * Added: Stream loader can handle compound urls better.
+   * Added: Manually override MPD's (remote) music dir.
+   * Fixed: Crash upon calling mpd_return_pair.
+   * Fixed: Hide-show toggle changed player position on Gnome.
+   * Fixed: Allow more time to connect to MPD at start-up.
+   * Fixed: Possible wrong sorting order of dragged items.
+   * Coded: Project 'includes' libmpdclient using pkg-config.
+
+
+   v. 1.3.0   2013 01 04
+
+   Quimup 1.3.0 can take advantage of new feautures in MPD 0.17
+   and accepts files by drag-n-drop or by using 'open with'.
+
+   * Added: "Drag & drop" from file manager to quimup.
+   * Added: "Open with" from file manager (%U or %F).
+   * Added: Single-instance-mode (by default).
+   * Added: Localization support (no translations yet).
+   * Added: Command line parameters (try "quimup -help").
+   * Added: Rescan tags for any selection (library menu).
+   * Added: Folder search in the media browser.
+   * Added: Check if mpd is running when quimup starts up.
+   * Added: Option to apply colors to the album info widget.
+   * Added: Music directory is requested from MPD (0.17+).
+   * Added: Playlist scrolls to drop-position after d&d.
+   * Added: Drop on playlist allows insert (not just append).
+   * Added: Manually controlled widths in library and playlist.
+   * Added: Track titles shown across all colums in library.
+   * Added: A first-run dialog with some useful tips.
+   * Added: More details on command line in case of MPD-errors.
+   * Fixed: Kb/s updated a bit too frequently.
+   * Fixed: Automatic column width was not working very well.
+   * Fixed: After playlist update 'played' status was lost.
+   * Fixed: Browser not showing up after workspace changed.
+   * Fixed: Possible sorting errors (now cAsE sEnSiTiVe).
+   * Fixed: Not all commands checked against MPD_allowed.
+   * Fixed: Not all features disabled after lost connection.
+   * Fixed: Failed to connect with remotely running mpd.
+   * Fixed: False error dialogs with remotely running mpd.
+   * Fixed: No response to xfade time setting (until toggled).
+   * Fixed: Rearranged playlist items could be in wrong order.
+   * Fixed: Commented-out lines in mpd.conf were not ignored.
+   * Fixed: Album art did not ignore non-image files.
+   * Fixed: No response to lost connection using socket.
+   * Fixed: Shuffle did not handle 'idle' item correctly.
+   * Fixed: Non fatal error on "setOutputs".
+   * Coded: Playlist management completely revised.
+   * Coded: Memory not freed when getting replaygain-mode.
+   * Coded: Compilation error "getuid not declared".
+   * Coded: Compilation error "usleep not declared".
+   * Coded: Worked around a setHsv() bug in the color picker.
+   * Coded: Rewritten update and song-reload functions.
+
+
